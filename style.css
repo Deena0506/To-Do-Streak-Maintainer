@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Splash Screen */
+#splash {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #020617, #0f172a);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOut 2s forwards;
+    animation-delay: 2.5s;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 90px;
+    animation: pulse 1.5s infinite;
+}
+
+#splash h1 {
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+#splash p {
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* Main App Card */
+#app {
+    background: rgba(255, 255, 255, 0.05);
+    width: 420px;
+    max-width: 95%;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#app h2 {
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+/* Streak */
+.streak {
+    background: rgba(255, 165, 0, 0.15);
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 18px;
+    color: #facc15;
+    margin-bottom: 15px;
+}
+
+/* Input */
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f97316, #ef4444);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4);
+}
+
+.complete-btn {
+    margin-top: 15px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+/* Task List */
+ul {
+    list-style: none;
+    margin-top: 10px;
+    text-align: left;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+li input {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    cursor: pointer;
+}
+
+li span {
+    line-height: 1.2;
+}
+
+/* Animations */
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 480px) {
+    #app {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    #app h2 {
+        font-size: 22px;
+    }
+
+    .streak {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 70px;
+    }
+
+    #splash h1 {
+        font-size: 30px;
+    }
+}
+
+.reset-btn {
+    background: linear-gradient(135deg, #64748b, #475569);
+}
+
+.history-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+#historyList li {
+    font-size: 13px;
+    justify-content: space-between;
+}
+
+.completed {
+    color: #22c55e;
+}
+
+.failed {
+    color: #ef4444;
+}
+
+#historyList ul {
+    margin-top: 5px;
+}
+
+#historyList li strong {
+    margin-bottom: 5px;
+}
+
+/* Progress Bar */
+.progress-container {
+    margin: 15px 0;
+}
+
+.progress-text {
+    font-size: 14px;
+    margin-bottom: 6px;
+    opacity: 0.9;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+    transition: width 0.3s ease;
+}

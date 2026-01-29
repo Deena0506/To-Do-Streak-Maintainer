@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do Streak Maintainer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Splash Screen -->
+<div id="splash">
+    <div class="logo">🔥</div>
+    <h1>To-Do Streak</h1>
+    <p>Maintain your consistency</p>
+</div>
+
+<!-- Main App -->
+<div id="app" class="hidden">
+    <h2>Today's Tasks</h2>
+
+    <div class="streak">
+        🔥 Streak: <span id="streakCount">0</span> days
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-text">
+            Progress: <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </div>
+
+    <input type="text" id="taskInput" placeholder="Add a new task">
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="taskList"></ul>
+
+    <button class="complete-btn" onclick="checkStreak()">Complete Day</button>
+    <button class="reset-btn" onclick="resetStreak()">Reset Streak</button>
+
+    <h3 class="history-title">History</h3>
+    <ul id="historyList"></ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
