@@ -29,29 +29,30 @@ body {
 }
 
 .logo {
-    font-size: 90px;
+    font-size: 100px;
     animation: pulse 1.5s infinite;
 }
 
 #splash h1 {
-    font-size: 40px;
-    margin-top: 10px;
+    font-size: 42px;
+    margin-top: 12px;
 }
 
 #splash p {
     opacity: 0.8;
-    margin-top: 5px;
+    margin-top: 8px;
+    font-size: 16px;
 }
 
 /* Main App Card */
 #app {
-    background: rgba(255, 255, 255, 0.05);
-    width: 420px;
-    max-width: 95%;
-    padding: 26px;
-    border-radius: 18px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.06);
+    width: 100%;
+    max-width: 500px;
+    padding: 32px;
+    border-radius: 22px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(14px);
     text-align: center;
 }
 
@@ -60,52 +61,55 @@ body {
 }
 
 #app h2 {
-    margin-bottom: 15px;
-    font-size: 26px;
+    margin-bottom: 20px;
+    font-size: 28px;
 }
 
 /* Streak */
 .streak {
-    background: rgba(255, 165, 0, 0.15);
-    padding: 12px;
-    border-radius: 12px;
-    font-size: 18px;
+    background: rgba(255, 165, 0, 0.18);
+    padding: 14px;
+    border-radius: 14px;
+    font-size: 20px;
     color: #facc15;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 /* Input */
 input[type="text"] {
     width: 100%;
-    padding: 13px;
-    border-radius: 10px;
+    padding: 16px;
+    border-radius: 12px;
     border: none;
     outline: none;
-    margin-bottom: 10px;
-    font-size: 15px;
+    margin-bottom: 12px;
+    font-size: 16px;
 }
 
 /* Buttons */
 button {
     width: 100%;
-    padding: 13px;
-    margin-top: 8px;
+    padding: 16px;
+    margin-top: 10px;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     background: linear-gradient(135deg, #f97316, #ef4444);
     color: white;
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+button:active {
+    transform: scale(0.98);
+}
+
 button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4);
+    box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);
 }
 
 .complete-btn {
-    margin-top: 15px;
+    margin-top: 18px;
     background: linear-gradient(135deg, #22c55e, #16a34a);
 }
 
@@ -116,52 +120,43 @@ button:hover {
 /* Task List */
 ul {
     list-style: none;
-    margin-top: 12px;
+    margin-top: 16px;
     text-align: left;
 }
 
 li {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
     background: rgba(255, 255, 255, 0.08);
-    padding: 12px;
-    border-radius: 10px;
-    margin-bottom: 8px;
-    font-size: 15px;
+    padding: 16px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    font-size: 16px;
 }
 
 li input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
     cursor: pointer;
     accent-color: #22c55e;
 }
 
 li span {
-    line-height: 1.3;
+    line-height: 1.4;
 }
 
 /* History */
 .history-title {
-    margin-top: 22px;
-    margin-bottom: 10px;
-    font-size: 18px;
-    opacity: 0.9;
+    margin-top: 26px;
+    margin-bottom: 12px;
+    font-size: 20px;
 }
 
 #historyList li {
     flex-direction: column;
     align-items: flex-start;
-    font-size: 14px;
-}
-
-#historyList ul {
-    margin-top: 6px;
-}
-
-#historyList li strong {
-    margin-bottom: 6px;
+    font-size: 15px;
 }
 
 .completed {
@@ -174,20 +169,19 @@ li span {
 
 /* Progress Bar */
 .progress-container {
-    margin: 15px 0;
+    margin: 20px 0;
 }
 
 .progress-text {
-    font-size: 14px;
-    margin-bottom: 6px;
-    opacity: 0.9;
+    font-size: 15px;
+    margin-bottom: 8px;
 }
 
 .progress-bar {
     width: 100%;
-    height: 12px;
+    height: 16px;
     background: rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
+    border-radius: 30px;
     overflow: hidden;
 }
 
@@ -207,64 +201,56 @@ li span {
 }
 
 @keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
-/* 📱 Mobile Optimization */
+/* 📱 Strong Mobile Scaling */
 @media (max-width: 600px) {
 
     body {
-        font-size: 16px;
+        align-items: flex-start;
+        padding-top: 40px;
     }
 
     #app {
-        width: 95%;
-        padding: 30px;
-        border-radius: 20px;
+        width: 94%;
+        padding: 34px;
+        border-radius: 24px;
     }
 
     #app h2 {
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .streak {
-        font-size: 17px;
-        padding: 14px;
-    }
-
-    input[type="text"] {
-        font-size: 16px;
-        padding: 14px;
+        font-size: 19px;
     }
 
     button {
-        font-size: 16px;
-        padding: 15px;
+        font-size: 17px;
+        padding: 18px;
+    }
+
+    input[type="text"] {
+        font-size: 17px;
+        padding: 18px;
     }
 
     li {
-        font-size: 16px;
-        padding: 14px;
-    }
-
-    .progress-text {
-        font-size: 15px;
+        font-size: 17px;
+        padding: 18px;
     }
 
     .progress-bar {
-        height: 14px;
+        height: 18px;
     }
 
     .logo {
-        font-size: 72px;
+        font-size: 80px;
     }
 
     #splash h1 {
-        font-size: 32px;
+        font-size: 34px;
     }
 }
